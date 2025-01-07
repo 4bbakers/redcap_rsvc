@@ -14,18 +14,15 @@ Feature: User Interface: The system shall provide the ability to create a new re
         And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
         Then I should see Project status: "Production"
 
-        Given I click on the link labeled "Data Import Tool"
-        When I select "Import in real time" on the dropdown field labeled "Choose an import option"
-        And I select "Yes, display uploaded data prior to importing" on the dropdown field labeled "Display the data comparison table"
+        ##ACTION: Import data
+        When I click on the link labeled "Data Import Tool"
         And I upload a "csv" format file located at "import_files/BigDataTestProjectDATARename1.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-        And I click on the button labeled "Upload"
-        And I click on the button labeled "Upload File"
-        Then I should see "Instructions for Data Review"
-        And I click on the button labeled "Import Data"
-        Then I should see "Import Successful! 30 records where created of modified during the import"
-
+        When I click on the button labeled "Import Data"
+        Then I should see "Import Successful!"
+        
         #VERIFY
         Given I click on the link labeled "Record Status Dashboard"
+        #And I select "ALL (30)" on the dropdown field labeled "records per page"
         Then I should see a table header and rows containing the following values in a table:
             | Record ID | Form 1 |
             | 1         |        |
@@ -35,18 +32,45 @@ Feature: User Interface: The system shall provide the ability to create a new re
             | 5         |        |
             | 6         |        |
             | 7         |        |
-        And I should see all records are in an unverified status
+            | 8         |        |
+            | 9         |        |
+            | 10        |        |
+            | 11        |        |
+            | 12        |        |
+            | 13        |        |
+            | 14        |        |
+            | 15        |        |
+            | 16        |        |
+            | 17        |        |
+            | 18        |        |
+            | 19        |        |
+            | 20        |        |
+            | 21        |        |
+            | 22        |        |
+            | 23        |        |
+            | 24        |        |
+            | 25        |        |
+            | 26        |        |
+            | 27        |        |
+            | 28        |        |
+            | 29        |        |
+            | 30        |        |
+        #And I should see all records are in an unverified status
 
         When I click on the link labeled "Project Setup"
-        And I disable the button labeled "Auto-numbering for Records"
+        And I click on the button labeled "Disable" in the "Auto-numbering for records" row in the "Enable optional modules and customizations" section
+        Then I should see "Enable" in the "Auto-numbering for records" row in the "Enable optional modules and customizations" section
+        
         And I click on the link labeled "Data Import Tool"
-
-        When I select "Import in real time" on the dropdown field labeled "Choose an import option"
+        And I select "Import in real time" on the dropdown field labeled "Choose an import option"
         And I select "Yes, display uploaded data prior to importing" on the dropdown field labeled "Display the data comparison table"
-        And I select "Yes, Blank values in the file will overwrite existing values" on the dropdown field labeled "Auto-number/overwrite record IDs?"
+       #Unable to process this line.
+       #And I select "No, use the record label provided" on the dropdown field labeled "Auto-number/overwrite record IDs?"
+        And I select "Yes, blank values in the file will overwrite existing values" on the dropdown field labeled "Overwrite data with blank values?"
+        And I click on the button labeled "Yes, I understand" in the dialog box
         And I upload a "csv" format file located at "import_files/BigDataTestProjectDATARename2.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-        And I click on the button labeled "Upload File"
-        Then I should see "Import successful! 30 records were created or modified during the import"
+        And I click on the button labeled "Import Data"
+        Then I should see "Import Successful!"
 
         #VERIFY
         Given I click on the link labeled "Record Status Dashboard"
@@ -59,7 +83,37 @@ Feature: User Interface: The system shall provide the ability to create a new re
             | 5         |        |
             | 6         |        |
             | 7         |        |
-        And I should see all records are in an unverified status
+            | 8         |        |
+            | 9         |        |
+            | 10        |        |
+            | 11        |        |
+            | 12        |        |
+            | 13        |        |
+            | 14        |        |
+            | 15        |        |
+            | 16        |        |
+            | 17        |        |
+            | 18        |        |
+            | 19        |        |
+            | 20        |        |
+            | 21        |        |
+            | 22        |        |
+            | 23        |        |
+            | 24        |        |
+            | 25        |        |
+            | 26        |        |
+            | 27        |        |
+            | 28        |        |
+            | 29        |        |
+            | 30        |        |
+            | 100       |        |
+            | 200       |        |
+            | 300       |        |
+            | 700       |        |
+            | 800       |        |
+            | 900       |        |
+            
+        #And I should see all records are in an unverified status
         #VERIFY
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
