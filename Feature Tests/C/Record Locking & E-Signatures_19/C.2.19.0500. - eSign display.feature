@@ -23,9 +23,9 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         And I click on the button labeled "Add with custom rights"
         Then I should see 'Adding new user "Test_User1"'
 
-        When I click on the checkbox for the field labeled "Logging"
-        And I click on the checkbox for the field labeled "Record Locking Customization"
-        And I select the radio option "Locking / Unlocking with E-signature authority" for the field labeled "Lock / Unlock Records (instrument level)"
+        When I check the User Right named "Logging"
+        And I check the User Right named "Record Locking Customization"
+        And I check the radio labeled "Lock/Unlock Records (instrument level)" in the dialog box
         And I click on the button labeled "Close" in the dialog box
         And I click on the button labeled "Add user"
         Then I should see 'User "Test_User1" was successfully added'
@@ -34,7 +34,7 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action              | List of Data Changes OR Fields Exported |
-            | test_admin | Add user test_user1 | user = 'test_user1'                     |
+            | test_admin | Add user Test_User1 | user = 'Test_User1'                     |
 
         And I logout
 
