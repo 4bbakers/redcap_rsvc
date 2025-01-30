@@ -25,7 +25,7 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
 
         When I check the User Right named "Logging"
         And I check the User Right named "Record Locking Customization"
-        And I check the radio labeled "Lock/Unlock Records (instrument level)" in the dialog box
+        And I check the radio labeled "Locking / Unlocking with E-signature authority" in the dialog box
         And I click on the button labeled "Close" in the dialog box
         And I click on the button labeled "Add user"
         Then I should see 'User "Test_User1" was successfully added'
@@ -44,8 +44,9 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         #SETUP
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
-        And I verify the checkbox on the column labeled "Display the Lock option for this instrument?" for the Data Collection Instrument labeled "Text Validation" is selected
-        And I click on the checkbox on the column labeled "Also display E-signature option on instrument?" for the Data Collection Instrument labeled "Text Validation"
+        And I should see a checkbox labeled "Text Validation" that is checked
+        And for the Column Name "Also display E-signature option on instrument?", I check the checkbox within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? |
             | [✓]                                          | Text Validation            | [✓]                                            |
@@ -54,13 +55,13 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
 
         ##ACTION
         When I click on the link labeled "Record Status Dashboard"
-        And I click the bubble for the instrument labeled "Text Validation" for record "3" for event "Event 1"
+        And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
         Then I should see "Text Validation"
-        And I should see the checkbox for the field labeled "Lock this instrument?"
-        And I should see the checkbox for the field labeled "E-signature"
+        And I should see a checkbox labeled "Lock" that is unchecked
+        And I should see a checkbox labeled "E-signature" that is unchecked
 
-        When I click on the checkbox for the field labeled "Lock this instrument?"
-        And I click on the checkbox labeled "E-signature"
+        When I check the checkbox labeled "Lock"
+        And I check the checkbox labeled "E-signature"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "E-signature: Username/password verification" in a dialog box
 
