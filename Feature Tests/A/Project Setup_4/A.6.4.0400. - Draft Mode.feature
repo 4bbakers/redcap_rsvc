@@ -6,7 +6,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
   Scenario: A.6.4.0400.100 User's ability to approve draft changes without administrative approval
 
     Given I login to REDCap with the user "Test_Admin"
-    And I create a new project named "A.6.4.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+    And I create a new project named "A.6.4.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "A64400.xml", and clicking the "Create Project" button
 
     # BEGIN: STEPS FOR ATS
     # - EMAIL ADDRESS SET FOR REDCAP ADMIN - without it, project request behavior does not work properly
@@ -62,6 +62,13 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
       | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Enter draft mode                        |
 
     When I click on the link labeled "Designer"
+    When I click on the link labeled "Data Types"
+    And I click on the Edit image for the field named "Radio Button Manual"
+
+    #We are deleting the third option and renaming "100, Choice100" to "101, Choice100" in one step
+    And I clear field and enter Choices of "9..9, Choice99{enter}101, Choice100" into the open "Edit Field" dialog box
+
+    And I click on the button labeled "Save" in the dialog box
     When I click on the button labeled "Submit Changes for Review"
     And I click on the button labeled "Submit" in the dialog box
     Then I should see "Awaiting review of project changes"
@@ -94,11 +101,23 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Reject production project modifications |
 
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Data Types" instrument on event "Event 1" for record ID "1" and click on the bubble
+    Then I should see "Choice101"
+
     And I click on the link labeled "Designer"
+    Then I should see a button labeled "Submit Changes for Review"
     #THE PROJECT STAYS IN DRAFT MODE IF THE CHANGES ARE REJECTED SO DRAFT MODE BUTTON DOES NOT APPEAR
     #And I click on the button labeled "Enter Draft Mode"
     #Then I should see "The project is now in Draft Mode"
 
+    When I click on the link labeled "Data Types"
+    And I click on the Edit image for the field named "Radio Button Manual"
+
+    #We are deleting the third option and renaming "100, Choice100" to "101, Choice100" in one step
+    And I clear field and enter Choices of "9..9, Choice99{enter}101, Choice100" into the open "Edit Field" dialog box
+
+    And I click on the button labeled "Save" in the dialog box
     When I click on the button labeled "Submit Changes for Review"
     And I click on the button labeled "Submit" in the dialog box
     Then I should see "Awaiting review of project changes"
@@ -131,13 +150,17 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported  |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Approve production project modifications |
 
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Data Types" instrument on event "Event 1" for record ID "1" and click on the bubble
+    Then I should NOT see "Choice101"
+
     And I click on the link labeled "Designer"
     Then I should see "Enter Draft Mode"
 
 
   Scenario: A.6.4.0400.200 User's ability to approve draft changes without administrative approval if no existing fields were modified
     Given I login to REDCap with the user "Test_Admin"
-    And I create a new project named "A.6.4.0400.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+    And I create a new project named "A.6.4.0400.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "A64400.xml", and clicking the "Create Project" button
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.200"
 
@@ -171,10 +194,9 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "The project is now in Draft Mode"
 
     When I click on the link labeled "Data Types"
-    And I click on the button labeled "Dismiss"
     And I click on the Edit image for the field named "Radio Button Manual"
     And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
-    And I click on the button labeled "Save"
+    And I click on the button labeled "Save" in the dialog box
     And I click on the button labeled "Submit Changes for Review"
     And I click on the button labeled "Submit" in the dialog box
     Given I logout
@@ -200,6 +222,11 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Remove production project modifications |
 
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Data Types" instrument on event "Event 1" for record ID "1" and click on the bubble
+    Then I should NOT see "Choice102"
+    And I should see "Choice101"
+
     And I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
     Then I should see "The project is now in Draft Mode"
@@ -219,9 +246,16 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
       | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Approve production project modifications (automatic) |
       | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Create project field                                 |
 
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Data Types" instrument on event "Event 1" for record ID "1" and click on the bubble
+    Then I should see "Text Box 2"
+
+    When I click on the link labeled "Designer"
+    Then I should see a button labeled "Enter Draft Mode"
+
   Scenario: A.6.4.0400.300 User's ability to approve draft changes without administrative approval if no critical issues exist
     Given I login to REDCap with the user "Test_Admin"
-    And I create a new project named "A.6.4.0400.300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+    And I create a new project named "A.6.4.0400.300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "A64400.xml", and clicking the "Create Project" button
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
     And I click on the link labeled "User Rights"
@@ -279,7 +313,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     #We are deleting the third option and renaming "100, Choice100" to "101, Choice100" in one step
     And I clear field and enter Choices of "9..9, Choice99{enter}101, Choice100" into the open "Edit Field" dialog box
 
-    And I click on the button labeled "Save"
+    And I click on the button labeled "Save" in the dialog box
     And I click on the button labeled "Submit Changes for Review"
     And I click on the button labeled "Submit" in the dialog box
     Then I should see "Awaiting review of project changes"
@@ -313,6 +347,10 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Remove production project modifications |
 
+     When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Data Types" instrument on event "Event 1" for record ID "1" and click on the bubble
+    Then I should see "Choice101"
+
     And I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
     Then I should see "The project is now in Draft Mode"
@@ -323,7 +361,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     #We are deleting the third option and renaming "100, Choice100" to "101, Choice100" in one step
     And I clear field and enter Choices of "9..9, Choice99{enter}101, Choice100" into the open "Edit Field" dialog box
 
-    And I click on the button labeled "Save"
+    And I click on the button labeled "Save" in the dialog box
     And I click on the button labeled "Submit Changes for Review"
     And I click on the button labeled "Submit" in the dialog box
     Then I should see "Awaiting review of project changes"
@@ -356,6 +394,10 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported  |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Approve production project modifications |
+
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Data Types" instrument on event "Event 1" for record ID "1" and click on the bubble
+    Then I should NOT see "Choice101"
 
     And I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
@@ -396,9 +438,18 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     #We are adding the third option of "102, Choice102"
     And I clear field and enter Choices of "9..9, Choice99{enter}101, Choice100{enter}102, Choice102" in the open "Edit Field" dialog box
 
-    And I click on the button labeled "Save"
+    And I click on the button labeled "Save" in the dialog box
     And I click on the button labeled "Submit Changes for Review"
     And I click on the button labeled "Submit" in the dialog box
     Then I should see "Changes Were Made Automatically"
     And I click on the button labeled "Close" in the dialog box
-#End
+
+    When I click on the link labeled "Logging"
+    Then I should see a table header and rows containing the following values in the logging table:
+      | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported              |
+      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Approve production project modifications (automatic) |
+    
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Data Types" instrument on event "Event 1" for record ID "1" and click on the bubble
+    Then I should see "Choice102"
+    And I logout
