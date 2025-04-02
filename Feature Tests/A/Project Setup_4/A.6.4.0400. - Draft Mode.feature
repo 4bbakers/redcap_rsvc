@@ -32,7 +32,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Given I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+    And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
     And I click on the link labeled "Logging"
@@ -160,7 +160,8 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
   Scenario: A.6.4.0400.200 User's ability to approve draft changes without administrative approval if no existing fields were modified
     Given I login to REDCap with the user "Test_Admin"
-    And I create a new project named "A.6.4.0400.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "A64400.xml", and clicking the "Create Project" button
+    And I click on the link labeled "My Projects"
+    And I create a new project named "A.6.4.0400.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.200"
 
@@ -174,7 +175,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Given I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+    And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
     When I click on the link labeled "Control Center"
@@ -190,6 +191,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the link labeled "A.6.4.0400.200"
     And I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
+    And I click on the button labeled "Dismiss"
     Then I should see "The project is now in Draft Mode"
 
     When I click on the link labeled "Data Types"
@@ -254,7 +256,8 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
   Scenario: A.6.4.0400.300 User's ability to approve draft changes without administrative approval if no critical issues exist
     Given I login to REDCap with the user "Test_Admin"
-    And I create a new project named "A.6.4.0400.300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "A64400.xml", and clicking the "Create Project" button
+    And I click on the link labeled "My Projects"
+    And I create a new project named "A.6.4.0400.300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
     And I click on the link labeled "User Rights"
@@ -268,7 +271,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Given I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+    And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
     When I click on the link labeled "Control Center"

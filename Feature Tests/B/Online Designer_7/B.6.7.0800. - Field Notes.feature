@@ -22,7 +22,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+    And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
     When I click on the link labeled "Designer"
@@ -66,6 +66,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
   Scenario: B.6.7.800.200 Note box field creation in Data Dictionary
     #SETUP
     Given I login to REDCap with the user "Test_Admin"
+    And I click on the link labeled "My Projects"
     When I click on the link labeled "New Project"
     And I enter "B.6.7.800.200" into the input field labeled "Project title"
     And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -75,7 +76,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: Upload data dictionary
     When I click on the link labeled "Dictionary"
-    And I upload a "csv" format file located at "dictionaries/Project1xml_DataDictionary.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+    And I upload a "csv" format file located at "dictionaries/B67800200_DataDictionary.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload File" to upload the file
     Then I should see "Your document was uploaded successfully and awaits your confirmation below."
 
     When I click on the button labeled "Commit Changes"

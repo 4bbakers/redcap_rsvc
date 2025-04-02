@@ -13,7 +13,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     Then I should see "General Configuration"
 
     When I enter "redcap@test.instance" into the input field labeled "Email Address of REDCap Administrator"
-    And I enter "You are now creating a test project" into the textarea field labeled "Custom message when creating/copying project"
+    And I enter "You are now creating a test project" into the textarea field labeled "Custom text displayed in a popup dialog when creating/copying project"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
 
@@ -80,7 +80,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+    And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
     #FUNCTIONAL REQUIREMENT

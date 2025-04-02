@@ -22,7 +22,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+    And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
     ##USER_RIGHTS - 1_FullRights
@@ -47,7 +47,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
 
     When I click on the button labeled "Close survey"
 
-    #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+    #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
     #And I click on the button labeled "Leave without saving changes"
 
     Given I return to the REDCap page I opened the survey from

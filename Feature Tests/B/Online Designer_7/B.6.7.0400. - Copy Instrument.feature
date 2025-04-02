@@ -13,11 +13,12 @@ Feature: Design forms Using Data Dictionary and Online Designer
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see Project status: "Production"
 
         When I click on the button labeled "Online Designer"
         And I click on the button labeled "Enter Draft Mode"
+        And I click on the button labeled "Dismiss"
         Then I should see "The project is now in Draft Mode"
 
         Then I should see a table header and rows containing the following values in a table:

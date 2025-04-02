@@ -14,7 +14,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see Project status: "Production"
 
         When I click on the link labeled "Designer"
@@ -55,6 +55,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "My Projects"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.1800.200" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"

@@ -13,7 +13,7 @@ Feature: Control Center: The system shall support capturing the IP address of su
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see Project status: "Production"
 
         #Verify IP status
@@ -28,7 +28,7 @@ Feature: Control Center: The system shall support capturing the IP address of su
         And I click on the link labeled "Modules/Services Configuration"
         Then I should see "e-Consent Framework"
 
-        When I select "Do NOT capture IP address" on the dropdown field labeled "Do NOT capture IP address" 
+        When I select "Do NOT capture IP address" on the dropdown field labeled "Capture the IP address" 
         And I click on the button labeled "Save Changes"
         Then I should see "Your system configuration values have now been changed!"
 
@@ -46,7 +46,7 @@ Feature: Control Center: The system shall support capturing the IP address of su
         And I click on the link labeled "Modules/Services Configuration"
         Then I should see "e-Consent Framework"
 
-        When I select "Capture IP address" on the dropdown field labeled "Capture IP address"
+        When I select "Capture IP address" on the dropdown field labeled "Capture the IP address"
         And I click on the button labeled "Save Changes"
         Then I should see "Your system configuration values have now been changed!"
 

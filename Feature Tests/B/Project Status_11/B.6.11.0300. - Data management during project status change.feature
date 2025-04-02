@@ -16,7 +16,7 @@ Feature: User Interface: The system shall support the ability for a user to keep
         And I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         ##VERIFY
         Then I should see Project status: "Production"
 
@@ -32,6 +32,7 @@ Feature: User Interface: The system shall support the ability for a user to keep
     Scenario: B.6.11.0300.200 Move project from development to production while deleting data
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "My Projects"
         And I create a new project named "B.6.11.0300.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #FUNCTIONAL REQUIREMENT
@@ -41,7 +42,7 @@ Feature: User Interface: The system shall support the ability for a user to keep
         And I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Delete ALL data in the project" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         ##VERIFY
         Then I should see Project status: "Production"
 
@@ -49,6 +50,6 @@ Feature: User Interface: The system shall support the ability for a user to keep
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "No records exist yet"
         ##VERIFY_LOGGING
-        When I click on "Logging"
+        When I click on the link labeled "Logging"
         Then I should see "Move project to Production status (delete all records)"
 #END

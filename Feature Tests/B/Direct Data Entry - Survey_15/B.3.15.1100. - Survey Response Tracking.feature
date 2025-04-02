@@ -21,7 +21,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
     When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+    And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
     ##VERIFY_SDT
@@ -44,7 +44,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
 
     ##VERIFY_RSD
     Given I return to the REDCap page I opened the survey from
-    #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+    #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
     #And I click on the button labeled "Leave without saving changes" in the dialog box
     And I click on the link labeled "Survey Distribution Tools"
     When I click on the tab labeled "Participant List"

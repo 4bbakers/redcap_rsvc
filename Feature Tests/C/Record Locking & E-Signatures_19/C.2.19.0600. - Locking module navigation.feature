@@ -14,40 +14,23 @@ Feature: User Interface: The tool shall support the ability to navigate directly
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see Project status: "Production"
-
-        #USER_RIGHTS
-        When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the input field labeled "Add with custom rights"
-        And I click on the button labeled "Add with custom rights"
-        Then I should see "Adding new user "test_user1""
-
-        When I click on the checkbox for the field labeled "Record Locking Customization"
-        And I click on the radio labeled "Locking / Unlocking with E-signature authority" for the field labeled "Lock / Unlock Records (instrument level)"
-        And I click on the button labeled "Close" in the dialog box
-        And I click on the checkbox for the field labeled "Lock/Unlock *Entire* Records (record level)"
-        And I click on the button labeled "Add user"
-        Then I should see "User "test_user1" was successfully added"
-
-        ##VERIFY_LOG
-        When I click on the link labeled "Logging"
-        Then I should see a table header and rows containing the following values in the logging table:
-            | Username   | Action              | List of Data Changes OR Fields Exported |
-            | test_admin | Add user test_user1 | user = 'test_user1'                     |
-
-
+ 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Navigate to record
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         And I click on the link labeled "E-signature and Locking Management"
-        Then I should see a table header and rows containing the following values in the E-signature and Locking Management table:
-            | Record | Form Name       |             |
-            | 3      | Text Validation | View record |
+        Then I should see a table header and rows containing the following values in a table:
+            | Record | Event Name             | Form Name       | Repeat Instance | Locked? | E-signed |             |
+            | 3      | Event 1 (Arm 1: Arm 1) | Text Validation |                 |         | N/A      | View record |
 
-        When I click on the link labeled "View record" for the form labeled "Text Validation" for record "3"
+        And I click on the "View record" link within the e-signature and locking management table in the following row:
+            | Record | Event Name             | Form Name       |
+            | 3      | Event 1 (Arm 1: Arm 1) | Text Validation |
+
         ##VERIFY
         Then I should see "Text Validation"
-        And I should see the checkbox for the field labeled "Lock this instrument?"
+        And I should see a checkbox labeled "Lock this instrument?" that is unchecked
 #END

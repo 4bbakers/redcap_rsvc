@@ -18,7 +18,7 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see Project status: "Production"
 
         When I click on the link labeled "Designer"
@@ -46,8 +46,8 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
-            | # | Variable / Field Name | Field Label | Field Attributes |
-            | 2 | [signature]           | Signature   | file (signature) |
+            | Variable / Field Name | Field Label | Field Attributes |
+            | [signature]           | Signature   | file (signature) |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -59,6 +59,7 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "My Projects"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.1300.200" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -78,6 +79,6 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
-            | # | Variable / Field Name | Field Label | Field Attributes |
-            | 2 | [signature]           | Signature   | file (signature) |
+            | Variable / Field Name | Field Label | Field Attributes |
+            | [signature]           | Signature   | file (signature) |
 #END
