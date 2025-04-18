@@ -157,17 +157,17 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record - 1 multi data form same event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
 
   Scenario:
     When I select "Data Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -194,13 +194,13 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record - 2 multi data form and survey same event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -208,10 +208,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -239,11 +239,11 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I should see a Complete icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
 
   Scenario: Add record -3 multi survey same event
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 3."
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -251,10 +251,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -270,7 +270,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I click on the bubble labeled "Coordinator Signature" for event "Event 1"
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -293,17 +293,17 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record - 4 multi data form different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 4."
 
   Scenario:
     When I select "Data Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -319,10 +319,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
   Scenario:
     When I click on the bubble labeled "Participant Consent" for event "Event 2"
     And I select "Data Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -341,13 +341,13 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record -  5 multi data form and survey different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 5."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -355,10 +355,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -375,10 +375,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
   Scenario:
     When I click on the bubble labeled "Participant Consent" for event "Event 2"
     And I select "Data Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -395,13 +395,13 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record -  6 multi survey different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 6."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -409,10 +409,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -429,10 +429,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
   Scenario:
     When I click on the bubble labeled "Participant Consent" for event "Event 2"
     And I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:

@@ -51,7 +51,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
-      And I select "--- select a survey ---" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I enter "[participant_consent_complete]='2'" into the input field labeled "When the following logic becomes true"
 
       And I enter "" into the input field labeled "[All instruments]"
@@ -67,15 +67,15 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
 
    Scenario: Add record for snapshot
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 1."
 
-      When I enter "FirstName" into the input field labeled "First Name"
-      And I enter "LastName" into the input field labeled "Last Name"
-      And I enter "email@test.edu" into the input field labeled "Email"
-      And I enter "2000-01-01" into the input field labeled "DOB"
+      When I clear field and enter "FirstName" into the input field labeled "First Name"
+      And I clear field and enter "LastName" into the input field labeled "Last Name"
+      And I clear field and enter "email@test.edu" into the input field labeled "email"
+      And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
         Given I click on the link labeled "Add signature"
@@ -92,21 +92,21 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
 
    Scenario: Add record for eConsent and snapshot
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 2."
 
-      When I click on the button labeled "Save & Stay"
+      When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Participant Consent"
 
-      When I enter "FirstName" into the input field labeled "First Name"
-      And I enter "LastName" into the input field labeled "Last Name"
-      And I enter "email@test.edu" into the input field labeled "Email"
-      And I enter "2000-01-01" into the input field labeled "DOB"
+      When I clear field and enter "FirstName" into the input field labeled "First Name"
+      And I clear field and enter "LastName" into the input field labeled "Last Name"
+      And I clear field and enter "email@test.edu" into the input field labeled "email"
+      And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
         Given I click on the link labeled "Add signature"
@@ -117,7 +117,6 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
 
       When I click on the button labeled "Next Page"
       Then I should see "Displayed below is a read-only copy of your survey responses."
-      And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
       When I check the checkbox labeled "I certify that all of my information in the document above is correct."
       And I click on the button labeled "Submit"

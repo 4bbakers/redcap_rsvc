@@ -41,21 +41,21 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1."
 
-        When I click on the button labeled "Save & Stay"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "Name"
-        And I enter "LastName" into the input field labeled "Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "Name"
+        And I clear field and enter "LastName" into the input field labeled "Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -66,7 +66,6 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -106,21 +105,21 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 2."
 
-        When I click on the button labeled "Save & Stay"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "Name"
-        And I enter "LastName" into the input field labeled "Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "Name"
+        And I clear field and enter "LastName" into the input field labeled "Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -131,7 +130,6 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
