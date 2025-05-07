@@ -52,7 +52,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-      And I enter "[participant_consent_complete]='2'" into the input field labeled "When the following logic becomes true"
+      And I enter "[participant_consent_complete]='2'" into the textarea field labeled "When the following logic becomes true"
 
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -127,7 +127,8 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
       And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
 
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble      Then I should see "Participant Consent file."
+      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+      Then I should see "Participant Consent file."
       And I should see a file uploaded to the field labeled "Pdfs And Combined Signatures Pdf."
       And I see "econsent"
 
