@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="C.3.30.100.0100" AsOfDateTime="2024-11-28T12:16:28" CreationDateTime="2024-11-28T12:16:28" SourceSystem="REDCap" SourceSystemVersion="14.7.1">
-<Study OID="Project.C3301000100">
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="Rand ADAM file test for Gherkin" AsOfDateTime="2025-04-03T14:40:20" CreationDateTime="2025-04-03T14:40:20" SourceSystem="REDCap" SourceSystemVersion="15.2.5">
+<Study OID="Project.RandADAMFileTestForGherkin">
 <GlobalVariables>
-	<StudyName>C.3.30.100.0100</StudyName>
-	<StudyDescription>This file contains the metadata, events, and data for REDCap project "C.3.30.100.0100".</StudyDescription>
-	<ProtocolName>C.3.30.100.0100</ProtocolName>
+	<StudyName>Rand ADAM file test for Gherkin</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "Rand ADAM file test for Gherkin".</StudyDescription>
+	<ProtocolName>Rand ADAM file test for Gherkin</ProtocolName>
 	<redcap:RecordAutonumberingEnabled>1</redcap:RecordAutonumberingEnabled>
 	<redcap:CustomRecordLabel></redcap:CustomRecordLabel>
 	<redcap:SecondaryUniqueField></redcap:SecondaryUniqueField>
@@ -20,6 +20,9 @@
 	<redcap:DataHistoryPopup>1</redcap:DataHistoryPopup>
 	<redcap:OrderRecordsByField></redcap:OrderRecordsByField>
 	<redcap:taskCompleteStatus>0</redcap:taskCompleteStatus>
+	<redcap:DataResolutionWorkflowEnabled>1</redcap:DataResolutionWorkflowEnabled>
+	<redcap:FieldCommentLogOptionEditDelete>1</redcap:FieldCommentLogOptionEditDelete>
+	<redcap:DataResolutionWorkflowHideClosedQueries>1</redcap:DataResolutionWorkflowHideClosedQueries>
 	<redcap:MyCapEnabled>0</redcap:MyCapEnabled>
 	<redcap:Purpose>0</redcap:Purpose>
 	<redcap:PurposeOther></redcap:PurposeOther>
@@ -52,7 +55,7 @@
 		<redcap:UserRoles role_name="TestRole" unique_role_name="U-987MW8TL4T" lock_record="0" lock_record_multiform="0" lock_record_customize="1" data_export_tool="" data_export_instruments="[demographics,0][randomization,0][smart_variables,0][survey,0]" data_import_tool="1" data_comparison_tool="1" data_logging="1" email_logging="0" file_repository="1" double_data="0" user_rights="1" data_access_groups="1" graphical="1" reports="1" design="1" alerts="1" calendar="1" data_entry="[demographics,0][randomization,0][smart_variables,0][survey,0]" api_export="0" api_import="0" api_modules="0" mobile_app="0" mobile_app_download_data="0" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="1" data_quality_execute="1" data_quality_resolution="0" random_setup="1" random_dashboard="1" random_perform="1" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
 	</redcap:UserRolesGroup>
 </GlobalVariables>
-<MetaDataVersion OID="Metadata.C3301000100_2024-11-28_1216" Name="C.3.30.100.0100" redcap:RecordIdField="record_id">
+<MetaDataVersion OID="Metadata.RandADAMFileTestForGherkin_2025-04-03_1440" Name="Rand ADAM file test for Gherkin" redcap:RecordIdField="record_id">
 	<FormDef OID="Form.demographics" Name="Demographics" Repeating="No" redcap:FormName="demographics">
 		<ItemGroupRef ItemGroupOID="demographics.record_id" Mandatory="No"/>
 		<ItemGroupRef ItemGroupOID="demographics.demographics_complete" Mandatory="No"/>
@@ -66,12 +69,11 @@
 		<ItemGroupRef ItemGroupOID="smart_variables.smart_variables_complete" Mandatory="No"/>
 	</FormDef>
 	<FormDef OID="Form.survey" Name="Survey" Repeating="No" redcap:FormName="survey">
-		<ItemGroupRef ItemGroupOID="survey.survey_timestamp" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="survey.will_survey" Mandatory="No"/>
 		<ItemGroupRef ItemGroupOID="survey.survey_complete" Mandatory="No"/>
 	</FormDef>
 	<ItemGroupDef OID="demographics.record_id" Name="Demographics" Repeating="No">
 		<ItemRef ItemOID="record_id" Mandatory="No" redcap:Variable="record_id"/>
-		<ItemRef ItemOID="redcap_survey_identifier" Mandatory="No" redcap:Variable="redcap_survey_identifier"/>
 		<ItemRef ItemOID="fname" Mandatory="No" redcap:Variable="fname"/>
 		<ItemRef ItemOID="lname" Mandatory="No" redcap:Variable="lname"/>
 		<ItemRef ItemOID="gender" Mandatory="No" redcap:Variable="gender"/>
@@ -95,11 +97,6 @@
 	</ItemGroupDef>
 	<ItemGroupDef OID="randomization.rand_group" Name="Randomization" Repeating="No">
 		<ItemRef ItemOID="rand_group" Mandatory="No" redcap:Variable="rand_group"/>
-		<ItemRef ItemOID="rand_group_2" Mandatory="No" redcap:Variable="rand_group_2"/>
-		<ItemRef ItemOID="rand_group_3" Mandatory="No" redcap:Variable="rand_group_3"/>
-		<ItemRef ItemOID="rand_group_4" Mandatory="No" redcap:Variable="rand_group_4"/>
-		<ItemRef ItemOID="rand_group_5" Mandatory="No" redcap:Variable="rand_group_5"/>
-		<ItemRef ItemOID="rand_group_6" Mandatory="No" redcap:Variable="rand_group_6"/>
 		<ItemRef ItemOID="rand_blind" Mandatory="No" redcap:Variable="rand_blind"/>
 		<ItemRef ItemOID="auto_rand" Mandatory="No" redcap:Variable="auto_rand"/>
 	</ItemGroupDef>
@@ -112,8 +109,7 @@
 	<ItemGroupDef OID="smart_variables.smart_variables_complete" Name="Form Status" Repeating="No">
 		<ItemRef ItemOID="smart_variables_complete" Mandatory="No" redcap:Variable="smart_variables_complete"/>
 	</ItemGroupDef>
-	<ItemGroupDef OID="survey.survey_timestamp" Name="Survey" Repeating="No">
-		<ItemRef ItemOID="survey_timestamp" Mandatory="No" redcap:Variable="survey_timestamp"/>
+	<ItemGroupDef OID="survey.will_survey" Name="Survey" Repeating="No">
 		<ItemRef ItemOID="will_survey" Mandatory="No" redcap:Variable="will_survey"/>
 		<ItemRef ItemOID="rand_survey" Mandatory="No" redcap:Variable="rand_survey"/>
 	</ItemGroupDef>
@@ -122,9 +118,6 @@
 	</ItemGroupDef>
 	<ItemDef OID="record_id" Name="record_id" DataType="text" Length="999" redcap:Variable="record_id" redcap:FieldType="text">
 		<Question><TranslatedText>Record ID</TranslatedText></Question>
-	</ItemDef>
-	<ItemDef OID="redcap_survey_identifier" Name="redcap_survey_identifier" DataType="text" Length="999" redcap:Variable="redcap_survey_identifier">
-		<Question><TranslatedText>Survey Identifier</TranslatedText></Question>
 	</ItemDef>
 	<ItemDef OID="fname" Name="fname" DataType="text" Length="999" redcap:Variable="fname" redcap:FieldType="text" redcap:Identifier="y">
 		<Question><TranslatedText>First name</TranslatedText></Question>
@@ -201,24 +194,20 @@
 		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_group_2" Name="rand_group_2" DataType="text" Length="1" redcap:Variable="rand_group_2" redcap:FieldType="radio">
-		<Question><TranslatedText>Randomization group</TranslatedText></Question>
-		<CodeListRef CodeListOID="rand_group_2.choices"/>
+		<Question><TranslatedText>Randomization group 2</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_group_3" Name="rand_group_3" DataType="text" Length="1" redcap:Variable="rand_group_3" redcap:FieldType="radio">
-		<Question><TranslatedText>Randomization group</TranslatedText></Question>
-		<CodeListRef CodeListOID="rand_group_3.choices"/>
+		<Question><TranslatedText>Randomization group 3</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
-	<ItemDef OID="rand_group_4" Name="rand_group_4" DataType="text" Length="1" redcap:Variable="rand_group_4" redcap:FieldType="dropdown">
-		<Question><TranslatedText>Randomization group</TranslatedText></Question>
-		<CodeListRef CodeListOID="rand_group_4.choices"/>
+	<ItemDef OID="rand_group_4" Name="rand_group_4" DataType="text" Length="1" redcap:Variable="rand_group_4" redcap:FieldType="radio">
+		<Question><TranslatedText>Randomization group 4</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_group_5" Name="rand_group_5" DataType="text" Length="1" redcap:Variable="rand_group_5" redcap:FieldType="radio">
-		<Question><TranslatedText>Randomization group</TranslatedText></Question>
-		<CodeListRef CodeListOID="rand_group_5.choices"/>
-	</ItemDef>
-		<ItemDef OID="rand_group_6" Name="rand_group_6" DataType="text" Length="1" redcap:Variable="rand_group_6" redcap:FieldType="radio">
-		<Question><TranslatedText>Randomization group</TranslatedText></Question>
-		<CodeListRef CodeListOID="rand_group_6.choices"/>
+		<Question><TranslatedText>Randomization group 5</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_blind" Name="rand_blind" DataType="text" Length="999" redcap:Variable="rand_blind" redcap:FieldType="text">
 		<Question><TranslatedText>Blinded randomization</TranslatedText></Question>
@@ -241,9 +230,6 @@ Randomization UTC Time: [ rand-utc-time ]: [rand-utc-time]
 	<ItemDef OID="smart_variables_complete" Name="smart_variables_complete" DataType="text" Length="1" redcap:Variable="smart_variables_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
 		<Question><TranslatedText>Complete?</TranslatedText></Question>
 		<CodeListRef CodeListOID="smart_variables_complete.choices"/>
-	</ItemDef>
-	<ItemDef OID="survey_timestamp" Name="survey_timestamp" DataType="datetime" Length="999" redcap:Variable="survey_timestamp">
-		<Question><TranslatedText>Survey Timestamp</TranslatedText></Question>
 	</ItemDef>
 	<ItemDef OID="will_survey" Name="will_survey" DataType="boolean" Length="1" redcap:Variable="will_survey" redcap:FieldType="yesno">
 		<Question><TranslatedText>Will you complete the survey?</TranslatedText></Question>
@@ -328,31 +314,6 @@ Randomization UTC Time: [ rand-utc-time ]: [rand-utc-time]
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
 	</CodeList>
-	<CodeList OID="rand_group_2.choices" Name="rand_group_2" DataType="text" redcap:Variable="rand_group_2">
-		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
-	</CodeList>
-	<CodeList OID="rand_group_3.choices" Name="rand_group_3" DataType="text" redcap:Variable="rand_group_3">
-		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
-	</CodeList>
-	<CodeList OID="rand_group_4.choices" Name="rand_group_4" DataType="text" redcap:Variable="rand_group_4">
-		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
-	</CodeList>
-	<CodeList OID="rand_group_5.choices" Name="rand_group_5" DataType="text" redcap:Variable="rand_group_5">
-		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
-	</CodeList>
-	<CodeList OID="rand_group_6.choices" Name="rand_group_6" DataType="text" redcap:Variable="rand_group_6">
-		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
-		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
-	</CodeList>
 	<CodeList OID="auto_rand.choices" Name="auto_rand" DataType="text" redcap:Variable="auto_rand">
 		<CodeListItem CodedValue="1"><Decode><TranslatedText>Group 1</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Group 2</TranslatedText></Decode></CodeListItem>
@@ -385,130 +346,4 @@ Randomization UTC Time: [ rand-utc-time ]: [rand-utc-time]
 	</CodeList>
 </MetaDataVersion>
 </Study>
-<ClinicalData StudyOID="Project.C3301000100" MetaDataVersionOID="Metadata.C3301000100_2024-11-28_1216">
-	<SubjectData SubjectKey="1" redcap:RecordIdField="record_id">
-			<FormData FormOID="Form.demographics" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="demographics.record_id" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="record_id" Value="1"/>
-					<ItemData ItemOID="fname" Value="Elizabeth"/>
-					<ItemData ItemOID="lname" Value="Bennett"/>
-					<ItemData ItemOID="gender" Value="1"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="demographics.demographics_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="demographics_complete" Value="2"/>
-				</ItemGroupData>
-			</FormData>
-			<FormData FormOID="Form.randomization" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="randomization.rand_group" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="rand_group" Value="1"/>
-					<ItemData ItemOID="rand_blind" Value="1"/>
-					<ItemData ItemOID="auto_rand" Value="1"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="randomization.randomization_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="randomization_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-			<FormData FormOID="Form.smart_variables" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="smart_variables.smart_variables_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="smart_variables_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-			<FormData FormOID="Form.survey" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="will_survey" Value="1"/>
-					<ItemData ItemOID="rand_survey" Value="1"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="survey.survey_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="survey_complete" Value="2"/>
-				</ItemGroupData>
-			</FormData>
-	</SubjectData>
-	<SubjectData SubjectKey="2" redcap:RecordIdField="record_id">
-			<FormData FormOID="Form.demographics" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="demographics.record_id" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="record_id" Value="2"/>
-					<ItemData ItemOID="fname" Value="test"/>
-					<ItemData ItemOID="lname" Value="ts"/>
-					<ItemData ItemOID="gender" Value="0"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="demographics.demographics_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="demographics_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-			<FormData FormOID="Form.randomization" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="randomization.rand_group" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="rand_group" Value="1"/>
-					<ItemData ItemOID="rand_blind" Value="1"/>
-					<ItemData ItemOID="auto_rand" Value="1"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="randomization.randomization_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="randomization_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-	</SubjectData>
-	<SubjectData SubjectKey="3" redcap:RecordIdField="record_id">
-			<FormData FormOID="Form.demographics" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="demographics.record_id" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="record_id" Value="3"/>
-					<ItemData ItemOID="fname" Value="asdf"/>
-					<ItemData ItemOID="lname" Value="safd"/>
-					<ItemData ItemOID="gender" Value="1"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="demographics.demographics_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="demographics_complete" Value="2"/>
-				</ItemGroupData>
-			</FormData>
-			<FormData FormOID="Form.randomization" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="randomization.rand_group" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="rand_group" Value="1"/>
-					<ItemData ItemOID="rand_blind" Value="2"/>
-					<ItemData ItemOID="auto_rand" Value="2"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="randomization.randomization_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="randomization_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-	</SubjectData>
-	<SubjectData SubjectKey="4" redcap:RecordIdField="record_id">
-			<FormData FormOID="Form.demographics" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="demographics.record_id" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="record_id" Value="4"/>
-					<ItemData ItemOID="fname" Value="ewtr"/>
-					<ItemData ItemOID="lname" Value="ret"/>
-					<ItemData ItemOID="gender" Value="0"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="demographics.demographics_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="demographics_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-			<FormData FormOID="Form.randomization" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="randomization.rand_group" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="rand_group" Value="2"/>
-					<ItemData ItemOID="rand_blind" Value="3"/>
-					<ItemData ItemOID="auto_rand" Value="3"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="randomization.randomization_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="randomization_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-	</SubjectData>
-	<SubjectData SubjectKey="5" redcap:RecordIdField="record_id">
-			<FormData FormOID="Form.demographics" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="demographics.record_id" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="record_id" Value="5"/>
-					<ItemData ItemOID="fname" Value="sdfasd"/>
-					<ItemData ItemOID="lname" Value="adsfsadf"/>
-					<ItemData ItemOID="gender" Value="0"/>
-				</ItemGroupData>
-				<ItemGroupData ItemGroupOID="demographics.demographics_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="demographics_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-			<FormData FormOID="Form.randomization" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="randomization.randomization_complete" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="randomization_complete" Value="0"/>
-				</ItemGroupData>
-			</FormData>
-	</SubjectData>
-</ClinicalData>
 </ODM>
