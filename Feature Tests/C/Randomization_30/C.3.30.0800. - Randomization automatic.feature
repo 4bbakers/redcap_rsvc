@@ -31,6 +31,7 @@ When I click on the link labeled "Project Setup"
 And I click on the button labeled "Setup randomization"
 And I click on the button labeled "Add new randomization model"
 Then I should see "STEP 1: Define your randomization model"
+And I select "rand_group (Randomization group)" on the second dropdown field labeled "- select a field -"
 And I select the dropdown option "rand_group" for the field labeled "Choose your randomization field"
 And I click on the button labeled "Save randomization model" and accept the confirmation window
 And I upload a "csv" format file located at "AlloRand rand_group1.csv", by clicking the button near "Upload allocation table (CSV file) for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
